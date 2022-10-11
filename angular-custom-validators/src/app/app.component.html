@@ -1,0 +1,22 @@
+<h1>Custom validator for reactive forms</h1>
+<p>
+  Start editing to see some magic happen :)
+</p>
+<form [formGroup]="blogPostForm">
+  <div style="margin-bottom: 4px;">
+    <input type="text" formControlName="title" placeholder="Post title" style="width:300px;"/>
+  </div>
+
+  <div style="margin-bottom: 4px;">
+    <input type="text" formControlName="content" placeholder="Post content" style="width:300px;"/>
+  </div>
+
+  <div style="margin-bottom: 4px;">
+    <input type="text" formControlName="categories" placeholder="Post categories: #category1; #category2" style="width:300px;"/>
+    <span *ngIf="blogPostForm.get('categories').invalid" style="color:red;">Invalid</span>
+  </div>
+
+  <div style="margin-bottom: 4px;">
+   <button type="button" (click)="submitForm()">Post it</button>
+  </div>
+</form>
